@@ -1,6 +1,6 @@
 # (PJFormValidator)Pure Javascript Form Validator
 
-PJFormValidator allows you to validator any HTML Forms.
+PJFormValidator allows you to validate any HTML Forms.
 
 ### How to use
 
