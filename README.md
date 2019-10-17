@@ -1,6 +1,6 @@
 # (PJFormValidator)Pure Javascript Form Validator
 
-PJFormValidator allows you to validator any Html Forms.
+PJFormValidator allows you to validator any HTML Forms.
 
 ### How to use
 
@@ -14,10 +14,10 @@ Before using you must mark all you input elements as validatable. There are by d
           'number' : 'Must be only number!!',
           'email' : "Email is not valid"
 ```
-  Every input must contain data-validation-error atrrbiute. This attribute allows you to show validation errors for given input
-
+  You can use one of them or one than one for every input element.
+  Also your inputs must contain data-validation-error atrribute. This attribute allows you to show validation errors for given input.
 ```
- <form id="validatable-form" class="form-center">
+ <form id="validatable-form">
         <div class="form-group">
             <label>Please enter your name</label>
             <input type="text" class="form-control required min-len-2 max-len-16 mx-m-4" data-validation-error="sp-1">
@@ -42,12 +42,25 @@ Before using you must mark all you input elements as validatable. There are by d
     </form>
 ```
 
-### Configuring
+### After HTML configuring
 
-Just copy given code to you project:
+After configuring your can set language for errors. By default validator supports ru, en and az languages.
+Every form element must contain id attribute.Because validation applies via form attribute.
 ```
                 validator.configLanguage('az');// 'ru' or 'en'
-                validator.validateForm('validatable-form');
+                validator.validateForm('validatable-form');// the form id
+```
+
+### Addind additional rules
+
+If you need, you can add your custom validation rules.
+```
+                  validator.addValidationConfiguration('az', 'mx-m-', 'error message for this rule');
+                 validator.addValidationRule('mx-m-', function(originalValue, errorOn, errorMessage, ruleValue) {
+                    if (true) {
+                        this._sendErrorToElement('mx-m-', errorOn, errorMessage);
+                    }
+                });
 ```
 
 ## Authors
