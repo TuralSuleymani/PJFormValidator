@@ -5,14 +5,15 @@ PJFormValidator allows you to validator any Html Forms.
 ### How to use
 
 Before using you must mark all you input elements as validatable. There are by default 6 rules for validation.
-           # 'required': 'Input cant be empty',
-           # 'min-len-': 'Minimum length of the input must be `x`',
-           # 'max-len-': 'Maximum length of the input must be `x`',
-           # 'num-min-': 'Minimum size of number must be `x`',
-           # 'num-max-': 'Maximum size of number must be `x`',
-           # 'number': 'Must be only number!!',
-           # 'email': "Email is not valid"
-           
+```
+          # 'required' #: 'Input cant be empty',
+          # 'min-len-' #: 'Minimum length of the input must be `x`',
+          # 'max-len-' #: 'Maximum length of the input must be `x`',
+           # 'num-min-' #: 'Minimum size of number must be `x`',
+           # 'num-max-' #: 'Maximum size of number must be `x`',
+           # 'number' #: 'Must be only number!!',
+           # 'email' #: "Email is not valid"
+```
   Every input must contain data-validation-error atrrbiute. This attribute allows you to show validation errors for given input
 
 ```
