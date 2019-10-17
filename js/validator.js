@@ -65,6 +65,9 @@ function Validator(validationConfig) {
     }
 
     this.configLanguage = function(lang) {
+        if (!this._isLangExists(lang)) {
+            throw new Error("Given language doesnt exist!");
+        }
         this._lang = lang;
     }
 
