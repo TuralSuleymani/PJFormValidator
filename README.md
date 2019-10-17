@@ -4,7 +4,7 @@ PJFormValidator allows you to validate any HTML Forms.
 
 ### How to use
 
-Before using you must mark all you input elements as validatable. There are by default 6 rules for validation.
+Before using you must mark all you input elements as validatable. There are by default 7 rules for validation.
 ```
           'required' : 'Input cant be empty',
           'min-len-' : 'Minimum length of the input must be `x`',
