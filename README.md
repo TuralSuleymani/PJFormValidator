@@ -1,88 +1,60 @@
-# Project Title
+# (PJFormValidator)Pure Javascript Form Validator
 
-One Paragraph of project description goes here
+PJFormValidator allows you to validator any Html Forms.
 
-## Getting Started
+### How to use
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Before using you must mark all you input elements as validatable. There are by default 6 rules for validation.
+           # 'required': 'Input cant be empty',
+           # 'min-len-': 'Minimum length of the input must be `x`',
+           # 'max-len-': 'Maximum length of the input must be `x`',
+           # 'num-min-': 'Minimum size of number must be `x`',
+           # 'num-max-': 'Maximum size of number must be `x`',
+           # 'number': 'Must be only number!!',
+           # 'email': "Email is not valid"
+           
+  Every input must contain data-validation-error atrrbiute. This attribute allows you to show validation errors for given input
 
 ```
-Give the example
+ <form id="validatable-form" class="form-center">
+        <div class="form-group">
+            <label>Please enter your name</label>
+            <input type="text" class="form-control required min-len-2 max-len-16 mx-m-4" data-validation-error="sp-1">
+            <div id="sp-1"></div>
+        </div>
+        <div class="form-group">
+            <label>Please enter your surname</label>
+            <input type="text" class="form-control required min-len-2 max-len-16" data-validation-error="sp-2">
+            <div id="sp-2"></div>
+        </div>
+        <div class="form-group">
+            <label>Please enter your age</label>
+            <input type="text" class="form-control number required num-min-8 num-max-19" data-validation-error="sp-3">
+            <div id="sp-3"></div>
+        </div>
+        <div class="form-group">
+            <label>Please enter your email</label>
+            <input type="text" class="form-control required email" data-validation-error="sp-4">
+            <div id="sp-4"></div>
+        </div>
+        <button id="btn_validate" class="btn btn-success">Validate</button>
+    </form>
 ```
 
-And repeat
+### Configuring
 
+Just copy given code to you project:
 ```
-until finished
+                validator.configLanguage('az');// 'ru' or 'en'
+                validator.validateForm('validatable-form');
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Suleymani Tural**  - [brain2brain.net](https://brain2brain.net/az/Home/Authors)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
