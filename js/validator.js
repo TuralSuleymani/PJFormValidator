@@ -208,32 +208,29 @@ function Validator(validationConfig) {
         },
         this._getValidationErrorElement = function(element) {
             return element.getAttribute('data-validation-error');
-        },
-        this.hasRule = function() {
-
-        },
-        this.validateForm = function(formId) {
-            let formForValidate = document.getElementById(formId);
-            if (formForValidate == null) {
-                throw new Error('given form doesnt exist');
-            } else {
-                let inputsForValidate = this._getInputsForValidate(formForValidate);
-                for (let input of inputsForValidate) {
-                    let errorOccuredOn = this._getValidationErrorElement(input);
-                    this._resetHtml(errorOccuredOn);
-                    let inputClAttributes = this._getAllClassAttributes(input);
-                    for (let inputClAttr of inputClAttributes) {
-                        let ruleName = this._getRule(inputClAttr);
-                        if (ruleName != null) {
-                            let ruleValue = this._getRuleValue(inputClAttr, ruleName);
-                            let formalizeErrorMessage = this._makeFormattedErrorMessage(inputClAttr, this._validationConfig.getRuleValueByLang(this._lang, ruleName));
-                            this._rules.executeRule(ruleName, input.value, errorOccuredOn, formalizeErrorMessage, ruleValue);
-                        }
-
+        }
+    this.validateForm = function(formId) {
+        let formForValidate = document.getElementById(formId);
+        if (formForValidate == null) {
+            throw new Error('given form doesnt exist');
+        } else {
+            let inputsForValidate = this._getInputsForValidate(formForValidate);
+            for (let input of inputsForValidate) {
+                let errorOccuredOn = this._getValidationErrorElement(input);
+                this._resetHtml(errorOccuredOn);
+                let inputClAttributes = this._getAllClassAttributes(input);
+                for (let inputClAttr of inputClAttributes) {
+                    let ruleName = this._getRule(inputClAttr);
+                    if (ruleName != null) {
+                        let ruleValue = this._getRuleValue(inputClAttr, ruleName);
+                        let formalizeErrorMessage = this._makeFormattedErrorMessage(inputClAttr, this._validationConfig.getRuleValueByLang(this._lang, ruleName));
+                        this._rules.executeRule(ruleName, input.value, errorOccuredOn, formalizeErrorMessage, ruleValue);
                     }
+
                 }
             }
         }
+    }
 }
 
 let validator = new Validator(validationConfig);
