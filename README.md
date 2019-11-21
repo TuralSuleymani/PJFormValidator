@@ -14,7 +14,7 @@ Before using you must mark all you input elements as validatable. There are by d
           'number' : 'Must be only number!!',
           'email' : "Email is not valid"
 ```
-  You can use one of them or one than one for every input element.
+  You can use one of them or more than one for every input element.
   Also your inputs must contain data-validation-error atrribute. This attribute allows you to show validation errors for given input.
 ```
  <form id="validatable-form">
